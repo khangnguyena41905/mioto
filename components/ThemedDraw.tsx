@@ -2,24 +2,27 @@ import { View, type ViewProps } from "react-native";
 
 import { useThemeColor } from "@/hooks/useThemeColor";
 
-export type ThemedViewProps = ViewProps & {
+export type ThemedDrawProps = ViewProps & {
   lightColor?: string;
   darkColor?: string;
-  invert?: boolean;
 };
 
-export function ThemedView({
+export function ThemedDraw({
   style,
   lightColor,
   darkColor,
-  invert = false,
   ...otherProps
-}: ThemedViewProps) {
+}: ThemedDrawProps) {
   const backgroundColor = useThemeColor(
     { light: lightColor, dark: darkColor },
-    "background",
-    invert
+    "drawerBackground"
   );
 
-  return <View style={[{ backgroundColor }, style]} {...otherProps} />;
+  return (
+    <View
+      className="w-full h-3/4"
+      style={[{ backgroundColor }, style]}
+      {...otherProps}
+    />
+  );
 }
