@@ -1,7 +1,12 @@
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { StyleSheet, TextInput, View, type TextInputProps } from "react-native";
 import { ThemedText } from "./ThemedText";
-export type ThemedInputProps = TextInputProps & { label: string; lightColor?: string; darkColor?: string; invert?: boolean; };
+export type ThemedInputProps = TextInputProps & {
+  label: string;
+  lightColor?: string;
+  darkColor?: string;
+  invert?: boolean;
+};
 
 export function ThemedInput({
   label,
@@ -13,13 +18,11 @@ export function ThemedInput({
 }: ThemedInputProps) {
   const textColor = useThemeColor(
     { light: lightColor, dark: darkColor },
-    "text",
-    !invert
+    "text"
   );
   const backgroundColor = useThemeColor(
     { light: lightColor, dark: darkColor },
-    "background",
-    !invert
+    "drawerBackground"
   );
   const borderColor = useThemeColor(
     { light: lightColor, dark: darkColor },
@@ -35,8 +38,10 @@ export function ThemedInput({
   return (
     <View style={styles.container}>
       <ThemedText
-        style={[styles.label, { backgroundColor, paddingHorizontal: 4, fontSize: 12 }]}
-        invert
+        style={[
+          styles.label,
+          { backgroundColor, paddingHorizontal: 4, fontSize: 12 },
+        ]}
       >
         {label}
       </ThemedText>

@@ -20,7 +20,7 @@ export function ThemedDraw({
 
   return (
     <View
-      className="w-full h-3/4"
+      className="w-full h-3/4 p-4 rounded-t-3xl"
       style={[{ backgroundColor }, style]}
       {...otherProps}
     />

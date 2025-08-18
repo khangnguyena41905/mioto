@@ -16,7 +16,7 @@ export default function Login() {
   };
 
   return (
-    <ThemedView className="flex-1 items-center justify-end">
+    <ThemedView className="w-full flex-1 items-center justify-end">
       {/* <TouchableOpacity onPress={handleLogin}> */}
       <ThemedDraw>
         <ThemedText type="title" className="text-center pt-6">
@@ -28,7 +28,7 @@ export default function Login() {
 
         <ThemedInput label="username" placeholder="username" />
         <ThemedInput label="password" placeholder="password" secureTextEntry />
-        <ThemedBtn title="Summit" className="" />
+        <ThemedBtn title="Summit" />
       </ThemedDraw>
       {/* </TouchableOpacity> */}
     </ThemedView>
