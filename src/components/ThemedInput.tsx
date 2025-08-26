@@ -14,6 +14,9 @@ export function ThemedInput({
   lightColor,
   darkColor,
   invert = false,
+  value,
+  onChangeText,
+  onBlur,
   ...rest
 }: ThemedInputProps) {
   const textColor = useThemeColor(
@@ -52,6 +55,9 @@ export function ThemedInput({
           { color: textColor, backgroundColor, borderColor },
           style,
         ]}
+        value={value}
+        onChangeText={onChangeText}
+        onBlur={onBlur}
         {...rest}
       />
     </View>
